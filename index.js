@@ -9,14 +9,11 @@ const expenseRoutes = require("./routes/expenseRoutes");
 
 const app = express();
 
-// ✅ CORS setup for local frontend
+// ✅ Simple CORS setup (allow all origins)
 app.use(
   cors({
-    origin: "http://localhost:3000", // your local React frontend
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-    optionsSuccessStatus: 200,
+    origin: "*", // allow any origin
+    credentials: true, // allow auth headers
   })
 );
 
